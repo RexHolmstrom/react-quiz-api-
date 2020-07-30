@@ -5,6 +5,21 @@ import { Component } from 'react'
 import quizService from "./quizService";
 
 class Quiz extends Component {
+    state = {
+        questionBank: []
+    };
+
+    getQuestion = () => {
+        quizService().then(question => {
+            this.setState({
+                questionBank: question
+            });
+        });
+    };
+    componentDidMount() {
+        this.getQuestion();
+    }
+
     render() {
         return (
             <div className="container">
@@ -13,9 +28,4 @@ class Quiz extends Component {
         );
     }
 }
-
-state = {
-    questionBank: []
-};
-
 ReactDOM.render(<Quiz />, document.getElementById("root"))
