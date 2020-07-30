@@ -24,6 +24,7 @@ class Quiz extends Component {
         return (
             <div className="container">
                 <div className="title">Quiz</div>
+                {this.state.questionBank.length > 0 && this.state.questionBank.map(({ question, answer, correct, questionID }) => (<h4>{question}</h4>))}
             </div>
         );
     }
