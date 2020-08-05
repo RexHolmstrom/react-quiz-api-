@@ -50,7 +50,9 @@ class Quiz extends Component {
                                 key={questionId}
                                 selected={answer => this.computeAnswer(answer, correct)}
                             />
-                        ))}
+                        )
+                    )}
+                {this.state.responses === 5 ? (<h2>{this.state.score}</h2>) : null}
             </div>
         );
     }
