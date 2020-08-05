@@ -31,6 +31,13 @@ class Quiz extends Component {
         });
     };
 
+    playAgain = () => {
+        this.getQuestion();
+        this.setState({
+            score: 0,
+            responses: 0
+        });
+    }
 
 
     componentDidMount() {
